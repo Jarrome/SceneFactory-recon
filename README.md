@@ -13,5 +13,14 @@ source install.sh
 ```
 source download_roboticshall.sh
 
+python demo.py
 ```
+
+*Please use keyboard*
+```
+****w*****    ****^*****
+**a*s*d***    ****|***** 
+**********    <--*v*-->*
+```
+*for turning and moving!*
 
