@@ -15,7 +15,7 @@ from nps.rendering import RenderingThread
 renderer = RenderingThread('cuda:0', workspace='workspace/demo', vis=True, remove_outlier=False)
 
 def step(idx, rgb, depth, pose, K, depth_im_scale):
-    renderer.add_frame
+    renderer.add_frame(rgb,depth,pose,K,depth_im_scale)
     renderer.id2pose[idx] = pose
 
 def _parse_traj_file(traj_path):
@@ -53,7 +53,7 @@ if __name__ == '__main__':
 
     # incrementally run
     N = len(idxs)
-    for i in tqdm(range(N)):
+    for i in tqdm(range(0,N,20)):
         idx = idxs[i]
         pose = poses[i]
         rgb = cv2.cvtColor(cv2.imread(rgb_path%idx,-1),cv2.COLOR_BGR2RGB) 
@@ -61,6 +61,6 @@ if __name__ == '__main__':
         
         step(idx,rgb,depth,pose,K,depth_im_scale)
                 
-        sleep(0.1)
+        sleep(0.1*20)
         
 
