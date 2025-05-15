@@ -1,5 +1,5 @@
 # DM-NPs
-Due-purpose Multiresolutional Neural Points in SceneFactory.
+Due-purpose Multiresolutional Neural Points in [SceneFactory](https://github.com/Jarrome/SceneFactory).
 
 The first *surface-gettable SLF* model.
 
